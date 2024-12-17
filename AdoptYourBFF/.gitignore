@@ -3,6 +3,9 @@
 # dependencies
 node_modules/
 
+android/
+ios/
+
 # Expo
 .expo/
 dist/
@@ -34,3 +37,5 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+.vscode
