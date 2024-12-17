@@ -1,26 +1,20 @@
 import { StatusBar } from 'expo-status-bar'
 import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 
-import React from 'react'
+import React, { useState } from 'react'
+
 import '@/global.css'
 
 export const App = () => {
+  const [colorMode, setColorMode] = useState<'light' | 'dark' | 'system'>('system')
+
   return (
-    <GluestackUIProvider mode="light">
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
+    <GluestackUIProvider mode={colorMode}>
+      <View className="border-8">
+        <Text className="font-extrablack">Open up App.tsx to start working on your app!</Text>
         <StatusBar style="auto" />
       </View>
     </GluestackUIProvider>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
